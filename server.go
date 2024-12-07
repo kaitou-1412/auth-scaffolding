@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-		// Load environment variables
+	// Load environment variables
 	if err := utils.LoadEnvVars(); err != nil {
 		os.Exit(1)
 	}
