@@ -1,9 +1,10 @@
 package utils
 
 import (
-	"github.com/joho/godotenv"
 	"log/slog"
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
 var (
@@ -15,10 +16,19 @@ var (
 )
 
 func LoadEnvVars() error {
-	err := godotenv.Load()
-	if err != nil {
-		slog.Error("Error loading .env file")
-		return err
+	env := os.Getenv("ENV")
+	if env == "" {
+		env = "production"
+	}
+
+	// Load .env file only in development
+	if env == "development" {
+		slog.Info("Loading .env file for development environment...")
+		err := godotenv.Load()
+		if err != nil {
+			slog.Error("Error loading .env file")
+			return err
+		}
 	}
 
 	DbHost = os.Getenv("POSTGRES_HOST")

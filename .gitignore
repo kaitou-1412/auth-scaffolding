@@ -1,3 +1,71 @@
 commands.txt
+
+# Go build and test files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+*.prof
+*.trace
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Dependency directories
+/vendor/
+/Godeps/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 .DS_Store
+
+# Environment and configuration
 .env
+*.env
+!sample.env
+.env.*
+config.yaml
+config.yml
+
+# Debug files
+debug
+debug.test
+
+# Build output
+/bin/
+/dist/
+/build/
+
+# Test coverage
+coverage.txt
+coverage.html
+/coverage/
+
+# Project-specific temporary files
+/tmp/
+/temp/
+
+# Air live reload
+.air.toml
+/tmp/
+
+# Log files
+*.log
+logs/
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
